@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wedding Event</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f3f0;
+        }
+        .playfair {
+            font-family: 'Playfair Display', serif;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen p-4">
+    <div class="bg-white rounded-2xl shadow-2xl p-8 md:p-12 max-w-2xl w-full text-center">
+        <!-- Title and Names -->
+        <h1 class="playfair text-4xl md:text-5xl font-bold text-gray-800 mb-4">
+            You're Invited
+        </h1>
+        <div class="flex items-center justify-center mb-6">
+            <span class="playfair text-3xl md:text-4xl text-rose-500 font-bold">Akash</span>
+            <span class="playfair text-2xl text-gray-500 mx-4">&</span>
+            <span class="playfair text-3xl md:text-4xl text-rose-500 font-bold">Roshini</span>
+        </div>
+        <p class="text-lg text-gray-600 max-w-md mx-auto mb-8">
+            Please join us as we celebrate our love and commitment to each other, surrounded by our dearest family and friends.
+        </p>
+
+        <!-- Wedding Details Section -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-gray-700 mb-8">
+            <div class="p-6 bg-rose-50 rounded-lg shadow-inner">
+                <h3 class="font-bold text-xl text-rose-600 mb-2">When</h3>
+                <p class="text-lg">Saturday, september 23rd, 2025</p>
+                <p class="text-lg">6:00 PM</p>
+            </div>
+            <div class="p-6 bg-rose-50 rounded-lg shadow-inner">
+                <h3 class="font-bold text-xl text-rose-600 mb-2">Where</h3>
+                <p class="text-lg">The Grand Garden Estate</p>
+                <p class="text-lg">Kompally , Hydreabad, State Telengana</p>
+            </div>
+            <div class="p-6 bg-rose-50 rounded-lg shadow-inner">
+                <h3 class="font-bold text-xl text-rose-600 mb-2">Reception</h3>
+                <p class="text-lg">Dinner & Dancing to follow</p>
+            </div>
+        </div>
+
+        <!-- Countdown Timer Section -->
+        <h2 class="playfair text-2xl md:text-3xl text-gray-800 mb-4">
+            The Countdown Is On!
+        </h2>
+        <div id="countdown" class="flex justify-center items-center space-x-2 md:space-x-4 mb-8 text-gray-700">
+            <!-- Countdown units will be displayed here by JavaScript -->
+        </div>
+
+        <!-- RSVP Button -->
+        <a href="#" class="inline-block bg-rose-500 hover:bg-rose-600 text-white font-semibold py-3 px-8 rounded-full shadow-lg transition duration-300 transform hover:scale-105">
+            RSVP Now
+        </a>
+    </div>
+
+    <script>
+        // Set the date we're counting down to (Year, Month - 1, Day, Hour, Minute, Second)
+        const countDownDate = new Date("September 23, 2025 18:00:00").getTime();
+
+        // Update the count down every 1 second
+        const x = setInterval(function() {
+            // Get today's date and time
+            const now = new Date().getTime();
+
+            // Find the distance between now and the count down date
+            const distance = countDownDate - now;
+
+            // Time calculations for days, hours, minutes and seconds
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            // Display the result in the element with id="countdown"
+            const countdownEl = document.getElementById("countdown");
+            if (countdownEl) {
+                countdownEl.innerHTML = `
+                    <div class="flex flex-col items-center">
+                        <span class="text-3xl md:text-4xl font-bold">${days}</span>
+                        <span class="text-sm">Days</span>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <span class="text-3xl md:text-4xl font-bold">:</span>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <span class="text-3xl md:text-4xl font-bold">${hours}</span>
+                        <span class="text-sm">Hours</span>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <span class="text-3xl md:text-4xl font-bold">:</span>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <span class="text-3xl md:text-4xl font-bold">${minutes}</span>
+                        <span class="text-sm">Minutes</span>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <span class="text-3xl md:text-4xl font-bold">:</span>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <span class="text-3xl md:text-4xl font-bold">${seconds}</span>
+                        <span class="text-sm">Seconds</span>
+                    </div>
+                `;
+            }
+
+            // If the count down is finished, write some text
+            if (distance < 0) {
+                clearInterval(x);
+                if (countdownEl) {
+                    countdownEl.innerHTML = "We are officially married! Thank you for celebrating with us.";
+                }
+            }
+        }, 1000);
+    </script>
+</body>
+</html>
