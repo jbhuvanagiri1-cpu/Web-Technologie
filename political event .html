@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voice of India - Political Website</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        :root {
+            --saffron: #FF9933;
+            --white: #FFFFFF;
+            --green: #138808;
+            --blue: #000080;
+            --dark-gray: #1a202c;
+            --light-gray: #f7fafc;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--dark-gray);
+            background-color: var(--light-gray);
+        }
+
+        /* Custom flag-inspired gradient background for hero section */
+        .flag-gradient {
+            background-image: linear-gradient(135deg, var(--saffron) 0%, var(--white) 50%, var(--green) 100%);
+        }
+
+        .flag-icon {
+            width: 24px;
+            height: 24px;
+            fill: currentColor;
+            display: inline-block;
+        }
+
+        .chakra-icon {
+            width: 20px;
+            height: 20px;
+            border: 2px solid var(--blue);
+            border-radius: 50%;
+            position: relative;
+        }
+
+        .chakra-icon::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 6px;
+            height: 6px;
+            background-color: var(--blue);
+            border-radius: 50%;
+        }
+
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header -->
+    <header class="bg-white shadow-md">
+        <nav class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <!-- Political party logo/name -->
+                <svg class="flag-icon text-saffron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                    <path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM256 48a208 208 0 1 1 0 416 208 208 0 1 1 0-416z" fill="#FF9933"/>
+                    <path d="M256 48A208 208 0 1 1 256 464a208 208 0 1 1 0-416zM256 256a208 208 0 1 0 0 0z" fill="#138808"/>
+                    <path d="M256 256A208 208 0 1 0 256 464a208 208 0 1 0 0-416z" fill="#FFFFFF"/>
+                </svg>
+                <span class="text-xl font-bold text-gray-800">Voice of India</span>
+            </div>
+            <div class="space-x-4 hidden md:flex">
+                <a href="#" class="text-gray-600 hover:text-saffron transition duration-300">Home</a>
+                <a href="#about" class="text-gray-600 hover:text-saffron transition duration-300">About Us</a>
+                <a href="#mission" class="text-gray-600 hover:text-saffron transition duration-300">Our Mission</a>
+                <a href="#contact" class="text-gray-600 hover:text-saffron transition duration-300">Contact</a>
+            </div>
+            <button class="md:hidden p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                </svg>
+            </button>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="flag-gradient text-white py-24 md:py-32 rounded-b-3xl">
+            <div class="container mx-auto px-4 text-center">
+                <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight tracking-tight drop-shadow-lg">
+                    <span>A New Era of Hope for a Prosperous India.</span>
+                </h1>
+                <p class="mt-4 text-lg sm:text-xl font-medium max-w-2xl mx-auto">
+                    <span>Empowering every citizen, building a stronger nation together.</span>
+                </p>
+                <button class="mt-8 px-8 py-3 bg-blue-600 text-white font-semibold rounded-full shadow-lg hover:bg-blue-700 transition duration-300 transform hover:scale-105">
+                    Join the Movement
+                </button>
+            </div>
+        </section>
+
+        <!-- About Us Section -->
+        <section id="about" class="py-16 bg-white">
+            <div class="container mx-auto px-4 flex flex-col md:flex-row items-center gap-8">
+                <div class="md:w-1/2">
+                    <h2 class="text-3xl font-bold text-gray-800 mb-4">About Us</h2>
+                    <p class="text-gray-600 leading-relaxed">
+                        Voice of India is a political movement founded on the principles of integrity, progress, and social justice. We believe in a transparent and accountable government that serves the people first. Our mission is to create a nation where every citizen has the opportunity to thrive, where education and healthcare are accessible to all, and where sustainable growth is the foundation of our future. We are dedicated to building a brighter, more equitable India for generations to come.
+                    </p>
+                </div>
+                <div class="md:w-1/2 flex justify-center items-center">
+                    <div class="w-64 h-64 bg-gray-200 rounded-full flex items-center justify-center border-4 border-saffron shadow-lg">
+                        <div class="chakra-icon"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Our Mission Section -->
+        <section id="mission" class="py-16 bg-gray-100">
+            <div class="container mx-auto px-4 text-center">
+                <h2 class="text-3xl font-bold text-gray-800 mb-10">Our Core Mission</h2>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <!-- Card 1 -->
+                    <div class="bg-white p-6 rounded-xl shadow-md transform hover:scale-105 transition duration-300">
+                        <h3 class="font-semibold text-xl mb-2 text-saffron">Empowerment</h3>
+                        <p class="text-gray-600">
+                            Empowering local communities and providing resources for self-sufficiency and growth.
+                        </p>
+                    </div>
+                    <!-- Card 2 -->
+                    <div class="bg-white p-6 rounded-xl shadow-md transform hover:scale-105 transition duration-300">
+                        <h3 class="font-semibold text-xl mb-2 text-green">Sustainability</h3>
+                        <p class="text-gray-600">
+                            Championing environmental policies that ensure a green and sustainable future for our planet.
+                        </p>
+                    </div>
+                    <!-- Card 3 -->
+                    <div class="bg-white p-6 rounded-xl shadow-md transform hover:scale-105 transition duration-300">
+                        <h3 class="font-semibold text-xl mb-2 text-blue">Progress</h3>
+                        <p class="text-gray-600">
+                            Driving technological and social progress through innovation and inclusive policies.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Form Section -->
+        <section id="contact" class="py-16 bg-white">
+            <div class="container mx-auto px-4 max-w-lg">
+                <h2 class="text-3xl font-bold text-center text-gray-800 mb-8">Get in Touch</h2>
+                <form class="space-y-6">
+                    <div>
+                        <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
+                        <input type="text" id="name" name="name" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-saffron transition duration-300">
+                    </div>
+                    <div>
+                        <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
+                        <input type="email" id="email" name="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-saffron transition duration-300">
+                    </div>
+                    <div>
+                        <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Your Message</label>
+                        <textarea id="message" name="message" rows="4" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-saffron transition duration-300"></textarea>
+                    </div>
+                    <button type="submit" class="w-full px-4 py-3 bg-green text-white font-semibold rounded-lg shadow-md hover:bg-green-700 transition duration-300">
+                        Send Message
+                    </button>
+                    <p class="text-xs text-center text-gray-500 mt-2">
+                        *Note: This form is for visual demonstration only and is not functional.
+                    </p>
+                </form>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-dark-gray text-white py-8 rounded-t-3xl">
+        <div class="container mx-auto px-4 text-center">
+            <p>&copy; 2025 Voice of India. All Rights Reserved.</p>
+            <div class="flex justify-center space-x-4 mt-4">
+                <a href="#" class="text-gray-400 hover:text-white transition duration-300">Privacy Policy</a>
+                <a href="#" class="text-gray-400 hover:text-white transition duration-300">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
